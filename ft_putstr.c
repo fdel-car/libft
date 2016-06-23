@@ -6,22 +6,16 @@
 /*   By: fdel-car <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 18:59:42 by fdel-car          #+#    #+#             */
-/*   Updated: 2015/12/08 19:53:43 by fdel-car         ###   ########.fr       */
+/*   Updated: 2016/05/03 15:50:38 by fdel-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/ft_printf.h"
+#include <unistd.h>
 
 void	ft_putstr(char const *s)
 {
-	int	i;
-
-	i = 0;
 	if (!s)
 		return ;
-	while (s[i])
-	{
-		ft_putchar(s[i]);
-		i++;
-	}
+	write(1, s, ft_strlen(s));
 }

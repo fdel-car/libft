@@ -6,18 +6,22 @@
 /*   By: fdel-car <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 12:48:00 by fdel-car          #+#    #+#             */
-/*   Updated: 2015/11/28 18:15:58 by fdel-car         ###   ########.fr       */
+/*   Updated: 2016/05/03 15:46:22 by fdel-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/ft_printf.h"
 
 size_t		ft_strlen(const char *s)
 {
 	int	i;
 
+	if (!s)
+		return (0);
 	i = 0;
 	while (s[i])
+	{
 		i++;
+	}
 	return (i);
 }
