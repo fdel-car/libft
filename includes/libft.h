@@ -12,11 +12,12 @@
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# define BUFF_SIZE 4
 
 # include <string.h>
 # include "ft_printf.h"
-# include "get_next_line.h"
 
+int					get_next_line(int const fd, char **line);
 void				ft_strputtab(char **tab);
 void				*ft_memalloc(size_t size);
 void				*ft_memset(void *s, int c, size_t n);
@@ -80,5 +81,6 @@ void				ft_swap_string(char **s1_ptr, char **s2_ptr);
 char				*ft_itoa_base(unsigned long long int nbr, int base);
 char				*ft_itoa_base_maj(unsigned long long int nbr, int base);
 int					ft_atoi_base(char *str, int base);
+float				ft_atof(const char *str);
 
 #endif

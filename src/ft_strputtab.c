@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strputtab.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fdel-car <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/27 17:33:33 by fdel-car          #+#    #+#             */
-/*   Updated: 2016/02/23 23:05:17 by fdel-car         ###   ########.fr       */
+/*   Created: 2016/02/29 17:37:32 by fdel-car          #+#    #+#             */
+/*   Updated: 2016/02/29 17:45:13 by fdel-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
 
-# define BUFF_SIZE 4
+void	ft_strputtab(char **tab)
+{
+	int i;
 
-int	get_next_line(int const fd, char **line);
-
-#endif
+	i = 0;
+	while (tab[i])
+	{
+		ft_putendl(tab[i]);
+		i++;
+	}
+}

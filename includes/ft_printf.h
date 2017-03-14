@@ -10,11 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# define ATT __attribute__((format(printf,1,2)))
-# define FT_P int ft_printf(char const *format, ...)ATT
-
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
+# define ATT __attribute__((format(printf,1,2)))
+# define FT_P int ft_printf(char const *format, ...)ATT
 
 # include <stdarg.h>
 # include <stddef.h>
@@ -22,13 +21,6 @@
 
 typedef struct	s_print
 {
-	int			l;
-	int			j;
-	int			f;
-	int			w;
-	int			p;
-	int			i;
-	char		c;
 	int			inv;
 	int			ret;
 	int			neg;
@@ -40,13 +32,20 @@ typedef struct	s_print
 	int			flag;
 	int			sign;
 	int			hash;
-	char		s[256];
-	char		*str;
-	wchar_t		*wide;
+	int			fl_right;
 	int			space;
 	int			s_wide;
 	int			ret_err;
-	int			fl_right;
+	int			l;
+	int			j;
+	int			f;
+	int			w;
+	int			p;
+	int			i;
+	char		c;
+	char		s[256];
+	char		*str;
+	wchar_t		*wide;
 }				t_print;
 
 typedef struct	s_handle
@@ -105,7 +104,8 @@ int				ft_octal_char(char const *fl, va_list ap, t_print *gl);
 int				ft_octal_long(char const *fl, va_list ap, t_print *gl);
 int				ft_octal_flag(char const *fl, va_list ap, t_print *gl, char t);
 int				ft_nooflag(va_list ap, t_print *gl, char t);
-int				ft_unload_oct3(t_print *gl, char *str, unsigned long long int o);
+int				ft_unload_oct3(t_print *gl, char *str,
+				unsigned long long int o);
 int				ft_hexa(char const *fl, va_list ap, t_print *gl);
 int				ft_hexa_maj(char const *fl, va_list ap, t_print *gl);
 char			*ft_itoa_base_maj(unsigned long long int nbr, int base);
