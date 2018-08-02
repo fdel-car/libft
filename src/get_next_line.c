@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vde-la-s <vde-la-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fdel-car <fdel-car@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/25 13:48:15 by vde-la-s          #+#    #+#             */
-/*   Updated: 2016/12/12 16:18:23 by vde-la-s         ###   ########.fr       */
+/*   Updated: 2018/08/02 18:05:11 by fdel-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,14 @@ static int	return_line(char *eol, char *s)
 {
 	if (!(*s = 0) && !eol)
 		return (0);
-	*eol++ = 0;
+	*eol++ = '\0';
 	ft_strcpy(s, eol);
 	return (1);
 }
 
 static int	fill_line(char **line, char *buf)
 {
-	char *tmp;
-
-	tmp = *line;
-	*line = ft_strjoin(*line, buf);
-	free(tmp);
+	*line = ft_strjoin_free(*line, buf);
 	return (*line ? 1 : -1);
 }
 
@@ -44,13 +40,11 @@ int			get_next_line(int const fd, char **line)
 		return (-1);
 	if (!(*line = *s[fd] ? ft_strdup(s[fd]) : ft_strnew(1)))
 		return (-1);
-	while ((r = read(fd, buf, BUFF_SIZE)) > 0)
+	while (!ft_strchr(*line, '\n') && (r = read(fd, buf, BUFF_SIZE)) > 0)
 	{
-		buf[r] = 0;
+		buf[r] = '\0';
 		if (!fill_line(line, buf))
 			return (-1);
-		if (ft_strchr(buf, '\n'))
-			break ;
 	}
 	n = ft_strchr(*line, '\n');
 	if (return_line(n, s[fd]) || ft_strlen(*line) || r > 0)
