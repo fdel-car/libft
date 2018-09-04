@@ -101,8 +101,12 @@ int		ft_printf(char const *format, ...)
 	va_list ap;
 	t_print	gl;
 	int		ret;
+	int		i;
 
+	i = 0;
 	gl.ret = 0;
+	while (i < 256)
+		gl.s[i++] = '\0';
 	va_start(ap, format);
 	ret = ft_init_printf(format, ap, 0, &gl);
 	if (ret < 0)
