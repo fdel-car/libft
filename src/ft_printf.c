@@ -70,7 +70,6 @@ void	ft_init(t_print *gl)
 int		ft_init_printf(char const *format, va_list ap, int i, t_print *gl)
 {
 	gl->j = 0;
-	ft_strclr(gl->s);
 	while (format[i] != '%' && format[i])
 		gl->s[gl->j++] = format[i++];
 	gl->s[gl->j] = '\0';
