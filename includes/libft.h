@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fdel-car <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fdel-car <fdel-car@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 17:26:34 by fdel-car          #+#    #+#             */
-/*   Updated: 2016/05/30 17:08:09 by fdel-car         ###   ########.fr       */
+/*   Updated: 2018/12/19 16:34:43 by fdel-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # define BUFF_SIZE 4
 
 # include <string.h>
-# include "ft_printf.h"
+# include <stddef.h>
 
 int					get_next_line(int const fd, char **line);
 void				ft_strputtab(char **tab);
@@ -23,8 +23,10 @@ void				*ft_memalloc(size_t size);
 void				*ft_memset(void *s, int c, size_t n);
 int					ft_putchar(unsigned int c);
 void				ft_putstr(char const *s);
+int					ft_putnstr(const char *str, size_t n);
 void				ft_putendl(char const *s);
 void				ft_putnbr(long long int n);
+void				ft_putunbr(unsigned long long int n);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
@@ -79,8 +81,10 @@ int					ft_islower(int c);
 void				ft_swap(int *a, int *b);
 void				ft_swap_string(char **s1_ptr, char **s2_ptr);
 char				*ft_itoa_base(unsigned long long int nbr, int base);
-char				*ft_itoa_base_maj(unsigned long long int nbr, int base);
 int					ft_atoi_base(char *str, int base);
 float				ft_atof(const char *str);
+int					ft_wstrlen(wchar_t const *s);
+int					ft_putwchar(unsigned int c, int lc);
+int					ft_putwstr(const wchar_t *s, int l);
 
 #endif
