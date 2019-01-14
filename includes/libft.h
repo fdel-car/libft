@@ -6,7 +6,7 @@
 /*   By: fdel-car <fdel-car@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 17:26:34 by fdel-car          #+#    #+#             */
-/*   Updated: 2018/12/19 16:34:43 by fdel-car         ###   ########.fr       */
+/*   Updated: 2019/01/14 16:14:23 by fdel-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char				**ft_strsplit(char const *s, char c);
 char				*ft_strtrim(char const *s);
 size_t				ft_strlen(char const *s);
 char				*ft_strjoin(char const *s1, char const *s2);
-char				*ft_strjoin_free(char *s1, char const *s2);
+char				*ft_strjoin_realloc(char *s1, char const *s2);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 void				ft_striter(char *s, void (*f)(char *));
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));

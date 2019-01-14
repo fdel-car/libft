@@ -6,7 +6,7 @@
 /*   By: fdel-car <fdel-car@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/25 13:48:15 by vde-la-s          #+#    #+#             */
-/*   Updated: 2018/12/19 16:15:03 by fdel-car         ###   ########.fr       */
+/*   Updated: 2019/01/14 16:13:52 by fdel-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	return_line(char *eol, char *s)
 
 static int	fill_line(char **line, char *buf)
 {
-	*line = ft_strjoin_free(*line, buf);
+	*line = ft_strjoin_realloc(*line, buf);
 	return (*line ? 1 : -1);
 }
 
