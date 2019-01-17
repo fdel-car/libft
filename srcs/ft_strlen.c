@@ -6,7 +6,7 @@
 /*   By: fdel-car <fdel-car@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 12:48:00 by fdel-car          #+#    #+#             */
-/*   Updated: 2018/12/19 16:14:19 by fdel-car         ###   ########.fr       */
+/*   Updated: 2019/01/17 18:44:40 by fdel-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t		ft_strlen(const char *s)
 {
-	int	i;
+	size_t	i;
 
 	if (!s)
 		return (0);
