@@ -6,7 +6,7 @@
 /*   By: fdel-car <fdel-car@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 12:36:28 by fdel-car          #+#    #+#             */
-/*   Updated: 2019/01/14 16:14:40 by fdel-car         ###   ########.fr       */
+/*   Updated: 2019/01/22 16:15:32 by fdel-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ char	*ft_strjoin_realloc(char *s1, char const *s2)
 
 	j = 0;
 	i = 0;
-	str = (char *)realloc(s1, sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	str = (char *)realloc(s1, sizeof(char) *\
+	(ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!str)
 		return (NULL);
 	while (s1 && s1[i])
