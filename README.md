@@ -1,4 +1,4 @@
-# libft
+# Libft
 
 A simple library composed of all the basics tools I created in the early stages of my formation in 42.
 
